@@ -1,2 +1,1 @@
-# test-1
-this is a test repo i made to teach something 
+# test-1 is something i made for fun ```nice```
