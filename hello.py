@@ -25,4 +25,4 @@ print(f'thank u for using the calcy {lol}'),print('*'*69)
 #     cad[i[0]].append(i)
 
 # print(cad)
-```hello```
+# ```hello```
