@@ -1,13 +1,6 @@
 
-# TODO: to make  some shit
 
-# def foo(n):
-#     nice= nt("fofo" ,input("here--->"))
-#     list1 = []
-#     for i in range(n):
-
-# Python code to demonstrate namedtuple()
-	
+# TODO :  make a namedtuple or a dataframe , easily . 	
 from collections import namedtuple
 def answer():
     no_of_students=int(input("here ---> "))
