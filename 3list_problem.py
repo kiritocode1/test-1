@@ -3,18 +3,18 @@
 from collections import namedtuple
 from typing import Any, List
 
-from asyncio.tasks import sleep
-def answer():
-    no_of_students=int(input("here ---> "))
-    columns_of_adjectives = input("the columns of data here ---> ").split()
-    a = namedtuple("fofo" , columns_of_adjectives)
-    list_of_students = []
-    for i in range(no_of_students):
-        data = input("here----> ").split()
-        xyz = a(*data)
-        list_of_students.append(xyz)
-    return print(list_of_students)
-answer()
+# from asyncio.tasks import sleep
+# def answer():
+#     no_of_students=int(input("here ---> "))
+#     columns_of_adjectives = input("the columns of data here ---> ").split()
+#     a = namedtuple("fofo" , columns_of_adjectives)
+#     list_of_students = []
+#     for i in range(no_of_students):
+#         data = input("here----> ").split()
+#         xyz = a(*data)
+#         list_of_students.append(xyz)
+#     return print(list_of_students)
+# answer()
 
 #! ///////////////////////////////////////////////////////////////////////////////////////////////////////
 #  TODO: u have 3 lists find the min index with sum given 
@@ -35,8 +35,14 @@ def finalFantasy(x:list, y: list , z: list , a:int)->Any:
             except: continue
     return None
 #  ! ////////////////////////////////////////////////////////////////////////
-import pyqrcode
-a =pyqrcode.create(input("here: "))
-print(a.png("test-1.png",scale=5))
+# import pyqrcode
+# a =pyqrcode.create(input("here: "))
+# print(a.png("test-1.png",scale=5))
 #////////////////////////////////////////////////////////////////////////
+#  TODO: to find the transpose of a matrix using python in 
+
+
+
+
+
 

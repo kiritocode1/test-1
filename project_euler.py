@@ -77,24 +77,15 @@ class project_euler:
         9009 = 91 × 99.
         Find the largest palindrome made from the 
         product of two 3-digit numbers.
-        as we can see a palindrome product is something like for eg 
-        9009 ---> 90 --> 100-1=99  and then what i see is  91 which is like 
-        N = str(no)[0]
-        A = no-1
-        palindromehalf = 1000/A * int(N)  - int(N)
-        now this is true for like upto 400 and beyond  , for 400  
-        its kinda moot but i think for like that is the point where 2 fractions converge soo 
+        so do we need to brute force this shit first of all we need to find that. 
         '''
-        N = str(n)[0]
-        a = n-1
-        palindromehalf = int(n/a)*int(N) - int(n)
-        return print(palindromehalf)
-
-    # def e6():
+    def e6():
         return print(assasin(10))
 
     def e7():
         pass
+
+
 
     def e8():
         pass
