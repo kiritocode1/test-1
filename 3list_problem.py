@@ -39,7 +39,18 @@ def finalFantasy(x:list, y: list , z: list , a:int)->Any:
 # a =pyqrcode.create(input("here: "))
 # print(a.png("test-1.png",scale=5))
 #////////////////////////////////////////////////////////////////////////
-#  TODO: to find the transpose of a matrix using python in 
+#  TODO: to find the transpose of a matrix using python 
+import math as m
+import random as r
+import numpy as np
+import time as t
+def transpose(a:list[list])->list[list]:
+    listy = []
+    for i in zip(*a):
+        listy.append(list(i))
+    return print(listy)
+
+transpose(np.arange(100).reshape(5,20))
 
 
 

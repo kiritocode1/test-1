@@ -1,8 +1,41 @@
 
-from typing import Counter, List, OrderedDict
 import math as m
-
-
+from typing import Counter
+from itertools import permutations
+# ? ......................USED functiona........................................................
+def assasin_for_e6(x):
+    '''this is so we can get a concise list of all the prime factors of the no in a list
+    easy to follow , we get all the prime nos lesser than the no .
+    so basically helping us to get , the primes. 
+    10 ---> [2,5]
+    11---> [11] because its a prime 
+    20 ---> [2,5]
+    25 ---> [5,5]
+    etc.
+    '''
+    assasin_list = [2, 3, 5, 7, 11, 13, 17, 19]
+    l = []  
+    if x in assasin_list:
+        l.append(x)
+        return l
+    i = 0   
+    while x != 1:
+        if x % assasin_list[i] == 0:
+            l.append(assasin_list[i])
+            x = x/assasin_list[i]
+        else:   
+            i += 1
+    return l
+def assak(stin):
+    mid = len(stin)//2
+    if len(stin)%2!=0:
+        a =list(stin)
+        a.pop(mid)
+        stin2 = "".join(a)
+        return assak(stin2)
+    if len(stin)%2==0 and stin[:mid]==stin[mid:][::-1]:
+        return True
+# *..............................main Arcadia...................................................................
 class project_euler:
     '''
     INTRODUCTION:
@@ -70,54 +103,38 @@ class project_euler:
                 return print(acc)
             acc += 1
 
-    def e5(n: int) -> int:
+    def e5() -> str:
         '''TODO : 
         A palindromic number reads the same both ways. 
         The largest palindrome made from the product of two 2-digit numbers is 
         9009 = 91 × 99.
         Find the largest palindrome made from the 
         product of two 3-digit numbers.
-        so do we need to brute force this shit first of all we need to find that. 
+        we could bruteforce this shit  .
         '''
+        a = list(permutations(range(100,999),2))
+        a.sort(key=lambda x : x[0]*x[1])
+        a = a[::-1]
+        for i in a:
+            done = str(i[0]*i[1])
+            if assak(done):
+                return done
     def e6():
-        return print(assasin(10))
-
+        return print(assasin_for_e6(10))
     def e7():
         pass
-
-
-
     def e8():
         pass
-
     def e9():
         pass
-
     def e10():
         pass
-
     def e11():
         pass
-
     def e12():
         pass
+    
+#! .................................trial  room..........................................
+a = project_euler
+print(a.e5())
 
-# !  ..................................................................................
-
-
-
-# ? ......................USED functiona........................................................
-def assasin(x):
-    assasin_list = [2, 3, 5, 7, 11, 13, 17, 19]
-    l = []
-    if x in assasin_list:
-        l.append(x)
-        return l
-    i = 0
-    while x != 1:
-        if x % assasin_list[i] == 0:
-            l.append(assasin_list[i])
-            x = x/assasin_list[i]
-    else:
-        i += 1
-    return l
