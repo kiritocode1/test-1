@@ -87,7 +87,7 @@ class project_euler:
                 return print(_)
             ai = ai/_
 
-    def e4():
+    def e6()->int:
         '''
         TODO:
         2520 is the smallest number that can be
@@ -119,8 +119,8 @@ class project_euler:
             done = str(i[0]*i[1])
             if assak(done):
                 return done
-    def e6():
-        return print(assasin_for_e6(10))
+    def e4():
+        pass
     def e7():
         pass
     def e8():
