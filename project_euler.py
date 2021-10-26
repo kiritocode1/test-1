@@ -45,7 +45,6 @@ class project_euler:
     '''
     def e1() -> int:
         ''' to find the multiples of all nos between 3 and  5 in 1000
-
         '''
         a = sum(list(filter(lambda x: x % 3 == 0 and x %
                 5 == 0, [i for i in range(1000)])))
@@ -64,7 +63,7 @@ class project_euler:
         l2 = list(filter(lambda x: x % 2 == 0, l))
         return l2
 
-    def e3():
+    def e3()->int:
         '''
         TODO:
         to find the largest prime fraction of  600851475143
@@ -79,7 +78,7 @@ class project_euler:
         def isprimo(x): return any([((x-i)/6).is_integer() for i in [1, 5]])
         l = []
         for i in range(4, no_we_need_biggest_of):
-            if ai % i == 0 and isprimo(i):
+            if ai % i == 0 and isprimo(i) and (i/25)%25!=0:
                 l.append(i)
         # return print(l)
         for _ in l:
@@ -87,7 +86,7 @@ class project_euler:
                 return print(_)
             ai = ai/_
 
-    def e6()->int:
+    def e6()->list:
         '''
         TODO:
         2520 is the smallest number that can be
@@ -96,13 +95,16 @@ class project_euler:
         What is the smallest positive number that is evenly divisible 
         by all of the numbers from 1 to 20? 
         '''
-        acc = 1
-        def a(x): return all([x % i == 0 for i in range(10, 21)])
-        while True:
-            if a(acc) == True:
-                return print(acc)
-            acc += 1
-
+        l = []
+        for i in range(1,21):
+            r = []
+            for j in assasin_for_e6(i):
+                if j in l:
+                    l.remove(j)
+                    r.append(j)
+                else: l.append(j)
+            l = l+r
+        return l
     def e5() -> str:
         '''TODO : 
         A palindromic number reads the same both ways. 
@@ -136,5 +138,5 @@ class project_euler:
     
 #! .................................trial  room..........................................
 a = project_euler
-print(a.e5())
+print(a.e6())
 
