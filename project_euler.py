@@ -1,7 +1,9 @@
 
 import math as m
 from typing import Counter
+import itertools as shit
 from itertools import permutations
+import operator
 # ? ......................USED functiona........................................................
 def assasin_for_e6(x):
     '''this is so we can get a concise list of all the prime factors of the no in a list
@@ -96,6 +98,7 @@ class project_euler:
         by all of the numbers from 1 to 20? 
         '''
         l = []
+        a = 1
         for i in range(1,21):
             r = []
             for j in assasin_for_e6(i):
@@ -104,7 +107,7 @@ class project_euler:
                     r.append(j)
                 else: l.append(j)
             l = l+r
-        return l
+        return [i for i in shit.accumulate(l,operator.mul)][-1]
     def e5() -> str:
         '''TODO : 
         A palindromic number reads the same both ways. 
