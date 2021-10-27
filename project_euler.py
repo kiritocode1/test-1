@@ -1,10 +1,11 @@
-
 import math as m
 from typing import Counter
 import itertools as shit
 from itertools import permutations
 import operator
 # ? ......................USED functiona........................................................
+
+
 def assasin_for_e6(x):
     '''this is so we can get a concise list of all the prime factors of the no in a list
     easy to follow , we get all the prime nos lesser than the no .
@@ -16,28 +17,32 @@ def assasin_for_e6(x):
     etc.
     '''
     assasin_list = [2, 3, 5, 7, 11, 13, 17, 19]
-    l = []  
+    l = []
     if x in assasin_list:
         l.append(x)
         return l
-    i = 0   
+    i = 0
     while x != 1:
         if x % assasin_list[i] == 0:
             l.append(assasin_list[i])
             x = x/assasin_list[i]
-        else:   
+        else:
             i += 1
     return l
+
+
 def assak(stin):
     mid = len(stin)//2
-    if len(stin)%2!=0:
-        a =list(stin)
+    if len(stin) % 2 != 0:
+        a = list(stin)
         a.pop(mid)
         stin2 = "".join(a)
         return assak(stin2)
-    if len(stin)%2==0 and stin[:mid]==stin[mid:][::-1]:
+    if len(stin) % 2 == 0 and stin[:mid] == stin[mid:][::-1]:
         return True
 # *..............................main Arcadia...................................................................
+
+
 class project_euler:
     '''
     INTRODUCTION:
@@ -65,7 +70,7 @@ class project_euler:
         l2 = list(filter(lambda x: x % 2 == 0, l))
         return l2
 
-    def e3()->int:
+    def e3() -> int:
         '''
         TODO:
         to find the largest prime fraction of  600851475143
@@ -80,7 +85,7 @@ class project_euler:
         def isprimo(x): return any([((x-i)/6).is_integer() for i in [1, 5]])
         l = []
         for i in range(4, no_we_need_biggest_of):
-            if ai % i == 0 and isprimo(i) and (i/25)%25!=0:
+            if ai % i == 0 and isprimo(i) and (i/25) % 25 != 0:
                 l.append(i)
         # return print(l)
         for _ in l:
@@ -88,7 +93,7 @@ class project_euler:
                 return print(_)
             ai = ai/_
 
-    def e6()->list:
+    def e6() -> list:
         '''
         TODO:
         2520 is the smallest number that can be
@@ -99,15 +104,17 @@ class project_euler:
         '''
         l = []
         a = 1
-        for i in range(1,21):
+        for i in range(1, 21):
             r = []
             for j in assasin_for_e6(i):
                 if j in l:
                     l.remove(j)
                     r.append(j)
-                else: l.append(j)
+                else:
+                    l.append(j)
             l = l+r
-        return [i for i in shit.accumulate(l,operator.mul)][-1]
+        return [i for i in shit.accumulate(l, operator.mul)][-1]
+
     def e5() -> str:
         '''TODO : 
         A palindromic number reads the same both ways. 
@@ -117,29 +124,36 @@ class project_euler:
         product of two 3-digit numbers.
         we could bruteforce this shit  .
         '''
-        a = list(permutations(range(100,999),2))
-        a.sort(key=lambda x : x[0]*x[1])
+        a = list(permutations(range(100, 999), 2))
+        a.sort(key=lambda x: x[0]*x[1])
         a = a[::-1]
         for i in a:
             done = str(i[0]*i[1])
             if assak(done):
                 return done
+
     def e4():
         pass
+
     def e7():
         pass
+
     def e8():
         pass
+
     def e9():
         pass
+
     def e10():
         pass
+
     def e11():
         pass
+
     def e12():
         pass
-    
+
+
 #! .................................trial  room..........................................
 a = project_euler
 print(a.e6())
-
