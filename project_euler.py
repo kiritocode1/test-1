@@ -1,3 +1,5 @@
+
+from collections import defaultdict
 import math as m
 from typing import Counter
 import itertools as shit
@@ -30,7 +32,6 @@ def assasin_for_e6(x):
             i += 1
     return l
 
-
 def assak(stin):
     mid = len(stin)//2
     if len(stin) % 2 != 0:
@@ -40,6 +41,23 @@ def assak(stin):
         return assak(stin2)
     if len(stin) % 2 == 0 and stin[:mid] == stin[mid:][::-1]:
         return True
+def asterisk(string_array:str)->int:
+    do = "|".join(string_array)
+    do_nothing=defaultdict()
+    for i in range(1,len(do)-2):
+    #     tix=0
+    #     inc = 1
+    #     while (i-inc)>=0 and do[i+inc]==do[i-inc]:
+    #         tix+=1
+    #         inc +=1
+    #     do_nothing[f"{i}"]=tix
+    # return do_nothing
+        tix = 0 
+        inc = 1
+        while (i-inc)>=0 and do[i-inc]==do[i+inc]:
+            tix+=1
+            inc+=1
+            print(f'{tix=} ,{inc=} , {(i-inc)=}')
 # *..............................main Arcadia...................................................................
 
 
@@ -80,7 +98,7 @@ class project_euler:
         n/2 because bigger than that cannot be a factor of the origional no 
         '''
         ai = 600851475143
-        # !error is coming here but what .
+        # *error is coming here but what .
         no_we_need_biggest_of = m.ceil(m.sqrt(ai))
         def isprimo(x): return any([((x-i)/6).is_integer() for i in [1, 5]])
         l = []
@@ -133,6 +151,7 @@ class project_euler:
                 return done
 
     def e4():
+        
         pass
 
     def e7():
@@ -157,3 +176,4 @@ class project_euler:
 #! .................................trial  room..........................................
 a = project_euler
 print(a.e6())
+print(asterisk("aaaa"))

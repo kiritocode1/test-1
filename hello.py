@@ -15,14 +15,3 @@ while True:
     except: continue
 print(f'thank u for using the calcy {lol}'),print('*'*69)
 #  !(T_T)
-
-
-# from collections import defaultdict
-# names = ["Adam","Aryan" ,"Bea", "Charlie", "Danielle","Eve", "Frantz", "Gustav", "Helena"]
-
-# cad = defaultdict(list)
-# for i in names : 
-#     cad[i[0]].append(i)
-
-# print(cad)
-# ```hello```
